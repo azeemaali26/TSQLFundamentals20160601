@@ -1,0 +1,49 @@
+Azure SQL Database Compatibility
+----------------------------------------
+
+Last updated: 2016-06-01
+
+Chapter 01 - Azure SQL Database Compatible
+Chapter 02 - Azure SQL Database Compatible
+Chapter 03 - Azure SQL Database Compatible
+Chapter 04 - Azure SQL Database Compatible
+Chapter 05 - Azure SQL Database Compatible
+Chapter 06 - Azure SQL Database Compatible
+Chapter 07 - Azure SQL Database Compatible
+Chapter 08 - Unsupported: BULK INSERT
+Chapter 10 - Azure SQL Database Compatible
+Chapter 11 - Unsupported: Global temporary tables
+
+Chapter 08
+----------
+
+* BULK INSERT statement isn't supported 
+
+- Example from book that doesn't work:
+
+BULK INSERT dbo.Orders FROM 'c:\temp\orders.txt'
+  WITH 
+    (
+       DATAFILETYPE    = 'char',
+       FIELDTERMINATOR = ',',
+       ROWTERMINATOR   = '\n'
+    );
+
+Chapter 11
+----------
+
+* Global temporary tables aren't supported
+
+- Examples from book that don't work:
+
+CREATE TABLE dbo.##Globals
+(
+  id  sysname     NOT NULL PRIMARY KEY,
+  val SQL_VARIANT NOT NULL
+);
+
+INSERT INTO dbo.##Globals(id, val) VALUES(N'i', CAST(10 AS INT));
+
+SELECT val FROM dbo.##Globals WHERE id = N'i';
+
+DROP TABLE dbo.##Globals;
