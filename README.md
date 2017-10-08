@@ -1,6 +1,6 @@
 # TSQLFundamentals20160601
 
-T-SQL语句逻辑处理顺序：
+#T-SQL语句逻辑处理顺序：
 
 FROM
 
@@ -22,7 +22,7 @@ ORDER BY
 
 
 
-运算符优先级：
+#运算符优先级：
 
 ()
 
@@ -42,7 +42,7 @@ OR, BETWEEN, IN, LIKE
 
 
 
-CASE表达式的等价缩写：
+#CASE表达式的等价缩写：
 
 COALESCE() --标准函数，推荐使用
 
@@ -54,7 +54,7 @@ CHOOSE() --非标准函数，SQL 2012版本以上，更好的支持从Access迁�
 
 
 
-Sample:
+#Sample:
 
 OFFSET-FETCH:
 
